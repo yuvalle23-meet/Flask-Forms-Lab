@@ -35,13 +35,7 @@ def login1():
 
 @app.route('/friend_exists/<string:name>', methods = ['GET', 'POST'])  # '/' for the default page
 def exist(name):
-	if request.method == "GET":
-		return render_template("home.html")
-	else:
-		if name in facebook_friends:
-			return render_template("friend_exists.html", n = name, boo = 'TRUE')
-		else:
-			return render_template("friend_exists.html", n = name, boo = 'False')
+	return render_template("friend_exists.html", n = name)
 
 
 
