@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<form action="#" method="#" style="max-width:500px;margin:auto">
+<form action="/create" method="POST" style="max-width:500px;margin:auto">
   <h2>Login to Facebook</h2>
   <div class="input-container">
     <i class="fa fa-user icon"></i>
@@ -25,6 +25,20 @@
 
   <button type="submit" class="btn">Login</button>
 </form>
+
+<script> 
+  const btn = document.getElementsByClass('btn');
+
+btn.addEventListener('click', function handleClick(event) {
+  // 👇️ if you are submitting a form (prevents page reload)
+  event.preventDefault();
+
+  const firstNameInput = document.getElementsByClass('input_field');
+
+  // 👇️ clear input field
+  firstNameInput.value = '';
+});
+</script>
 
 </body>
 </html>
